@@ -40,14 +40,30 @@ class AdminMenu
                 'order' => 1,
             ]);
 
-            // Items
-            if ($user->can('read-items-items')) {
+            // Expences
+            if ($user->can(['read-expenses-bills', 'read-expenses-payments', 'read-expenses-vendors'])) {
                 $menu->add([
-                    'url' => 'items/items',
-                    'title' => trans_choice('general.items', 2),
-                    'icon' => 'fa fa-cubes',
+                    'url' => 'incomes/invoices',
+                    'title' => trans_choice('general.bills', 2),
+                    'icon' => 'fa fa-shopping-cart',
                     'order' => 2,
                 ]);
+                /*$menu->dropdown(trans_choice('general.expenses', 2), function ($sub) use($user, $attr) {
+                    if ($user->can('read-expenses-bills')) {
+                        $sub->url('expenses/bills', trans_choice('general.bills', 2), 1, $attr);
+                    }
+
+                    if ($user->can('read-expenses-payments')) {
+                        $sub->url('expenses/payments', trans_choice('general.payments', 2), 2, $attr);
+                    }
+
+                    if ($user->can('read-expenses-vendors')) {
+                        $sub->url('expenses/vendors', trans_choice('general.vendors', 2), 3, $attr);
+                    }
+                }, 4, [
+                    'title' => trans_choice('general.expenses', 2),
+                    'icon' => 'fa fa-shopping-cart',
+                ]);*/
             }
 
             // Incomes
@@ -76,30 +92,14 @@ class AdminMenu
                 ]);*/
             }
 
-            // Expences
-            if ($user->can(['read-expenses-bills', 'read-expenses-payments', 'read-expenses-vendors'])) {
+            // Items
+            if ($user->can('read-items-items')) {
                 $menu->add([
-                    'url' => 'incomes/invoices',
-                    'title' => trans_choice('general.bills', 2),
-                    'icon' => 'fa fa-shopping-cart',
+                    'url' => 'items/items',
+                    'title' => trans_choice('general.items', 2),
+                    'icon' => 'fa fa-cubes',
                     'order' => 2,
                 ]);
-                /*$menu->dropdown(trans_choice('general.expenses', 2), function ($sub) use($user, $attr) {
-                    if ($user->can('read-expenses-bills')) {
-                        $sub->url('expenses/bills', trans_choice('general.bills', 2), 1, $attr);
-                    }
-
-                    if ($user->can('read-expenses-payments')) {
-                        $sub->url('expenses/payments', trans_choice('general.payments', 2), 2, $attr);
-                    }
-
-                    if ($user->can('read-expenses-vendors')) {
-                        $sub->url('expenses/vendors', trans_choice('general.vendors', 2), 3, $attr);
-                    }
-                }, 4, [
-                    'title' => trans_choice('general.expenses', 2),
-                    'icon' => 'fa fa-shopping-cart',
-                ]);*/
             }
 
             // Banking

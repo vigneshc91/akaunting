@@ -4,16 +4,17 @@
 
 @section('content')
     <div class="row">
-        <!---Income-->
-        <div class="col-md-4">
+         <!---Profit-->
+         <div class="col-md-4">
             <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
+                <span class="info-box-icon bg-green"><i class="fa fa-shopping-cart"></i></span>
 
                 <div class="info-box-content">
-                    <a href="items/items"><h2 class="text-uppercase text-center text-info">Items</h2></a>
+                    <a href="incomes/invoices"><h2 class="text-uppercase text-center text-success">Bills</h2></a>
                 </div>
             </div>
         </div>
+        
 
         <!---Expense-->
         <div class="col-md-4">
@@ -26,16 +27,17 @@
             </div>
         </div>
 
-        <!---Profit-->
+        <!---Income-->
         <div class="col-md-4">
             <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="fa fa-shopping-cart"></i></span>
+                <span class="info-box-icon bg-aqua"><i class="fa fa-cubes"></i></span>
 
                 <div class="info-box-content">
-                    <a href="incomes/invoices"><h2 class="text-uppercase text-center text-success">Bills</h2></a>
+                    <a href="items/items"><h2 class="text-uppercase text-center text-info">Items</h2></a>
                 </div>
             </div>
         </div>
+       
     </div>
 @endsection
 
