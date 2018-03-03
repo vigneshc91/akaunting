@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Schema;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Laravel db fix
         Schema::defaultStringLength(191);
+        View::share('date_format', 'd-m-Y');
     }
 
     /**
