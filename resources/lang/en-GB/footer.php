@@ -3,7 +3,7 @@
 return [
 
     'version'               => 'Version',
-    'powered'               => 'Powered By Akaunting',
-    'software'              => 'Free Accounting Software',
+    'powered'               => 'Powered By',
+    'software'              => 'Xtreme Programmers',
 
 ];

@@ -52,7 +52,13 @@ class AdminMenu
 
             // Incomes
             if ($user->can(['read-incomes-invoices', 'read-incomes-revenues', 'read-incomes-customers'])) {
-                $menu->dropdown(trans_choice('general.incomes', 2), function ($sub) use($user, $attr) {
+                $menu->add([
+                    'url' => 'incomes/customers',
+                    'title' => trans_choice('general.customers', 2),
+                    'icon' => 'fa fa-user',
+                    'order' => 2,
+                ]);
+                /*$menu->dropdown(trans_choice('general.incomes', 2), function ($sub) use($user, $attr) {
                     if ($user->can('read-incomes-invoices')) {
                         $sub->url('incomes/invoices', trans_choice('general.invoices', 2), 1, $attr);
                     }
@@ -67,12 +73,18 @@ class AdminMenu
                 }, 3, [
                     'title' => trans_choice('general.incomes', 2),
                     'icon' => 'fa fa-money',
-                ]);
+                ]);*/
             }
 
             // Expences
             if ($user->can(['read-expenses-bills', 'read-expenses-payments', 'read-expenses-vendors'])) {
-                $menu->dropdown(trans_choice('general.expenses', 2), function ($sub) use($user, $attr) {
+                $menu->add([
+                    'url' => 'incomes/invoices',
+                    'title' => trans_choice('general.bills', 2),
+                    'icon' => 'fa fa-shopping-cart',
+                    'order' => 2,
+                ]);
+                /*$menu->dropdown(trans_choice('general.expenses', 2), function ($sub) use($user, $attr) {
                     if ($user->can('read-expenses-bills')) {
                         $sub->url('expenses/bills', trans_choice('general.bills', 2), 1, $attr);
                     }
@@ -87,11 +99,11 @@ class AdminMenu
                 }, 4, [
                     'title' => trans_choice('general.expenses', 2),
                     'icon' => 'fa fa-shopping-cart',
-                ]);
+                ]);*/
             }
 
             // Banking
-            if ($user->can(['read-banking-accounts', 'read-banking-transfers', 'read-banking-transactions'])) {
+            /*if ($user->can(['read-banking-accounts', 'read-banking-transfers', 'read-banking-transactions'])) {
                 $menu->dropdown(trans('general.banking'), function ($sub) use($user, $attr) {
                     if ($user->can('read-banking-accounts')) {
                         $sub->url('banking/accounts', trans_choice('general.accounts', 2), 1, $attr);
@@ -108,10 +120,10 @@ class AdminMenu
                     'title' => trans('general.banking'),
                     'icon' => 'fa fa-university',
                 ]);
-            }
+            }*/
 
             // Reports
-            if ($user->can(['read-reports-income-summary', 'read-reports-expense-summary', 'read-reports-income-expense-summary'])) {
+            /*if ($user->can(['read-reports-income-summary', 'read-reports-expense-summary', 'read-reports-income-expense-summary'])) {
                 $menu->dropdown(trans_choice('general.reports', 2), function ($sub) use($user, $attr) {
                     if ($user->can('read-reports-income-summary')) {
                         $sub->url('reports/income-summary', trans('reports.summary.income'), 1, $attr);
@@ -128,7 +140,7 @@ class AdminMenu
                     'title' => trans_choice('general.reports', 2),
                     'icon' => 'fa fa-bar-chart',
                 ]);
-            }
+            }*/
 
             // Settings
             if ($user->can(['read-settings-settings', 'read-settings-categories', 'read-settings-currencies', 'read-settings-taxes'])) {
@@ -137,20 +149,20 @@ class AdminMenu
                         $sub->url('settings/settings', trans('general.general'), 1, $attr);
                     }
 
-                    if ($user->can('read-settings-categories')) {
+                    /*if ($user->can('read-settings-categories')) {
                         $sub->url('settings/categories', trans_choice('general.categories', 2), 2, $attr);
                     }
 
                     if ($user->can('read-settings-currencies')) {
                         $sub->url('settings/currencies', trans_choice('general.currencies', 2), 3, $attr);
-                    }
+                    }*/
 
                     if ($user->can('read-settings-taxes')) {
                         $sub->url('settings/taxes', trans_choice('general.tax_rates', 2), 4, $attr);
                     }
 
                     // Modules
-                    $modules = Module::all();
+                    /*$modules = Module::all();
                     $position = 5;
                     foreach ($modules as $module) {
                         $m = LaravelModule::findByAlias($module->alias);
@@ -163,7 +175,7 @@ class AdminMenu
                         $sub->url('settings/apps/' . $m->getAlias(), title_case(str_replace('_', ' ', snake_case($m->getName()))), $position, $attr);
 
                         $position++;
-                    }
+                    }*/
                 }, 7, [
                     'title' => trans_choice('general.settings', 2),
                     'icon' => 'fa fa-gears',
@@ -171,14 +183,14 @@ class AdminMenu
             }
 
             // Apps
-            if ($user->can('read-modules-home')) {
+            /*if ($user->can('read-modules-home')) {
                 $menu->add([
                     'url' => 'apps/home',
                     'title' => trans_choice('general.modules', 2),
                     'icon' => 'fa fa-rocket',
                     'order' => 8,
                 ]);
-            }
+            }*/
 
             // Fire the event to extend the menu
             event(new AdminMenuCreated($menu));

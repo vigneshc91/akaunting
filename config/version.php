@@ -2,15 +2,15 @@
 
 return [
 
-    'name'      =>  'Akaunting',
+    'name'      =>  'Xtreme Programmers',
 
     'code'      =>  'Import',
 
     'major'     =>  '1',
 
-    'minor'     =>  '1',
+    'minor'     =>  '0',
 
-    'patch'     =>  '13',
+    'patch'     =>  '0',
 
     'build'     =>  '',
     

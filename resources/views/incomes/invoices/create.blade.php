@@ -24,7 +24,7 @@
 
         {{ Form::textGroup('invoiced_at', trans('invoices.invoice_date'), 'calendar',['id' => 'invoiced_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy/mm/dd\'', 'data-mask' => ''], Date::now()->toDateString()) }}
 
-        {{ Form::textGroup('due_at', trans('invoices.due_date'), 'calendar',['id' => 'due_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy/mm/dd\'', 'data-mask' => '']) }}
+        {{ Form::textGroup('due_at', trans('invoices.due_date'), 'calendar',['id' => 'due_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy/mm/dd\'', 'data-mask' => ''], Date::now()->toDateString()) }}
 
         {{ Form::textGroup('invoice_number', trans('invoices.invoice_number'), 'file-text-o', ['required' => 'required'], $number) }}
 
@@ -299,10 +299,10 @@
             modal += '                      </div>';
             modal += '                  </div>';
             modal += '                  <div class="form-group col-md-6">';
-            modal += '                      <label for="tax_number" class="control-label">{{ trans('general.tax_number') }}</label>';
+            modal += '                      <label for="phone" class="control-label">{{ trans('general.phone') }}</label>';
             modal += '                      <div class="input-group">';
-            modal += '                          <div class="input-group-addon"><i class="fa fa-percent"></i></div>';
-            modal += '                          <input class="form-control" placeholder="{{ trans('general.tax_number') }}" name="tax_number" type="text" id="tax_number">';
+            modal += '                          <div class="input-group-addon"><i class="fa fa-phone"></i></div>';
+            modal += '                          <input class="form-control" placeholder="{{ trans('general.phone') }}" name="phone" type="text" id="phone">';
             modal += '                      </div>';
             modal += '                  </div>';
             modal += '                  <div class="form-group col-md-6 required">';

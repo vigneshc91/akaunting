@@ -10,8 +10,8 @@ trait Currencies
 
     public function convert($amount, $code, $rate, $format = false)
     {
-        $default = new Currency(setting('general.default_currency', 'USD'));
-
+        $default = new Currency(setting('general.default_currency'));
+        
         if ($format) {
             $money = Money::$code($amount, true)->convert($default, (double) $rate)->format();
         } else {
@@ -23,7 +23,7 @@ trait Currencies
 
     public function reverseConvert($amount, $code, $rate, $format = false)
     {
-        $default = setting('general.default_currency', 'USD');
+        $default = setting('general.default_currency', 'INR');
 
         $code = new Currency($code);
 

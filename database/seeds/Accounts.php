@@ -32,7 +32,7 @@ class Accounts extends Seeder
                 'company_id' => $company_id,
                 'name' => trans('demo.accounts_cash'),
                 'number' => '1',
-                'currency_code' => 'USD',
+                'currency_code' => 'INR',
                 'bank_name' => trans('demo.accounts_cash'),
                 'enabled' => '1',
             ],
