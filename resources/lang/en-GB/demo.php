@@ -10,6 +10,7 @@ return [
     'currencies_eur'        => 'Euro',
     'currencies_gbp'        => 'British Pound',
     'currencies_try'        => 'Turkish Lira',
+    'currencies_inr'        => 'Indian Rupee',
     'taxes_exempt'          => 'Tax Exempt',
     'taxes_normal'          => 'Normal Tax',
     'taxes_sales'           => 'Sales Tax',
