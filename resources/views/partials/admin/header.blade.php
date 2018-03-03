@@ -5,12 +5,12 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>
+            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Billing</b></span>
         @else
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>
+            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Billing</b></span>
         @endif
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -60,27 +60,7 @@
                                 <small>{{ trans('header.last_login', ['time' => $user->last_logged_in_at]) }}</small>
                             </p>
                         </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                @permission('read-auth-users')
-                                <div class="col-xs-4 text-center">
-                                    <a href="{{ url('auth/users') }}">{{ trans_choice('general.users', 2) }}</a>
-                                </div>
-                                @endpermission
-                                @permission('read-auth-roles')
-                                <div class="col-xs-4 text-center">
-                                    <a href="{{ url('auth/roles') }}">{{ trans_choice('general.roles', 2) }}</a>
-                                </div>
-                                @endpermission
-                                @permission('read-auth-permissions')
-                                <div class="col-xs-4 text-center">
-                                    <a href="{{ url('auth/permissions') }}">{{ trans_choice('general.permissions', 2) }}</a>
-                                </div>
-                                @endpermission
-                            </div>
-                            <!-- /.row -->
-                        </li>
+                      
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             @permission('read-auth-profile')

@@ -2,8 +2,8 @@
 
 return [
 
-    'invoice_number'    => 'Invoice Number',
-    'invoice_date'      => 'Invoice Date',
+    'invoice_number'    => 'Bill Number',
+    'invoice_date'      => 'Bill Date',
     'total_price'       => 'Total Price',
     'due_date'          => 'Due Date',
     'order_number'      => 'Order Number',
