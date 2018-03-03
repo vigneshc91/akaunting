@@ -144,25 +144,31 @@ class AdminMenu
 
             // Settings
             if ($user->can(['read-settings-settings', 'read-settings-categories', 'read-settings-currencies', 'read-settings-taxes'])) {
-                $menu->dropdown(trans_choice('general.settings', 2), function ($sub) use($user, $attr) {
+                $menu->add([
+                    'url' => 'settings/settings',
+                    'title' => trans_choice('general.settings', 2),
+                    'icon' => 'fa fa-gears',
+                    'order' => 2,
+                ]);
+                /*$menu->dropdown(trans_choice('general.settings', 2), function ($sub) use($user, $attr) {
                     if ($user->can('read-settings-settings')) {
                         $sub->url('settings/settings', trans('general.general'), 1, $attr);
                     }
 
-                    /*if ($user->can('read-settings-categories')) {
+                    if ($user->can('read-settings-categories')) {
                         $sub->url('settings/categories', trans_choice('general.categories', 2), 2, $attr);
                     }
 
                     if ($user->can('read-settings-currencies')) {
                         $sub->url('settings/currencies', trans_choice('general.currencies', 2), 3, $attr);
-                    }*/
+                    }
 
                     if ($user->can('read-settings-taxes')) {
                         $sub->url('settings/taxes', trans_choice('general.tax_rates', 2), 4, $attr);
                     }
 
                     // Modules
-                    /*$modules = Module::all();
+                    $modules = Module::all();
                     $position = 5;
                     foreach ($modules as $module) {
                         $m = LaravelModule::findByAlias($module->alias);
@@ -175,11 +181,11 @@ class AdminMenu
                         $sub->url('settings/apps/' . $m->getAlias(), title_case(str_replace('_', ' ', snake_case($m->getName()))), $position, $attr);
 
                         $position++;
-                    }*/
+                    }
                 }, 7, [
                     'title' => trans_choice('general.settings', 2),
                     'icon' => 'fa fa-gears',
-                ]);
+                ]);*/
             }
 
             // Apps

@@ -89,7 +89,7 @@ class Item extends Model
 
         $query = Item::select('id as item_id', 'name', 'sale_price', 'purchase_price', 'tax_id');
 
-        $query->where('quantity', '>', '0');
+        // $query->where('quantity', '>', '0');
 
         foreach ($filter_data as $key => $value) {
             $query->where($key, 'LIKE', "%" . $value  . "%");
