@@ -124,7 +124,7 @@
             html += '      <button type="button" onclick="$(this).tooltip(\'destroy\'); $(\'#item-row-' + item_row + '\').remove(); totalItem();" data-toggle="tooltip" title="{{ trans('general.delete') }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>';
             html += '  </td>';
             html += '  <td>';
-            html += '      <input class="form-control typeahead" required="required" placeholder="{{ trans('general.form.enter', ['field' => trans_choice('invoices.item_name', 1)]) }}" name="item[' + item_row + '][name]" type="text" id="item-name-' + item_row + '">';
+            html += '      <input class="form-control typeahead" required="required" autocomplete="off" placeholder="{{ trans('general.form.enter', ['field' => trans_choice('invoices.item_name', 1)]) }}" name="item[' + item_row + '][name]" type="text" id="item-name-' + item_row + '">';
             html += '      <input name="item[' + item_row + '][item_id]" type="hidden" id="item-id-' + item_row + '">';
             html += '  </td>';
             html += '  <td>';
@@ -196,7 +196,7 @@
                 item_id = parseInt(input_id[input_id.length-1]);
 
                 $(this).typeahead({
-                    minLength: 3,
+                    minLength: 1,
                     displayText:function (data) {
                         return data.name;
                     },
