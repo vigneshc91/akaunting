@@ -5,12 +5,12 @@
 @section('content')
     <section class="invoice">
         <div class="row invoice-header">
-            <div class="col-xs-7">
+            <!-- <div class="col-xs-7">
                 @if ($logo)
                 <img src="{{ $logo }}" class="invoice-logo" />
                 @endif
-            </div>
-            <div class="col-xs-5 invoice-company">
+            </div> -->
+            <div class="col-xs-12 invoice-company">
                 <address>
                     <strong>{{ setting('general.company_name') }}</strong><br>
                     {!! nl2br(setting('general.company_address')) !!}<br>
@@ -47,22 +47,16 @@
                     <table class="table no-border">
                         <tbody>
                         <tr>
-                            <th>{{ trans('invoices.invoice_number') }}:</th>
-                            <td class="text-right">{{ $invoice->invoice_number }}</td>
+                            <td class="text-right">#{{ $invoice->invoice_number }}</td>
                         </tr>
-                        @if ($invoice->order_number)
+                        <!-- @if ($invoice->order_number)
                         <tr>
                             <th>{{ trans('invoices.order_number') }}:</th>
                             <td class="text-right">{{ $invoice->order_number }}</td>
                         </tr>
-                        @endif
+                        @endif -->
                         <tr>
-                            <th>{{ trans('invoices.invoice_date') }}:</th>
                             <td class="text-right">{{ Date::parse($invoice->invoiced_at)->format($date_format) }}</td>
-                        </tr>
-                        <tr>
-                            <th>{{ trans('invoices.payment_due') }}:</th>
-                            <td class="text-right">{{ Date::parse($invoice->due_at)->format($date_format) }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -84,9 +78,9 @@
                         <tr>
                             <td>
                                 {{ $item->name }}
-                                @if ($item->sku)
+                                <!-- @if ($item->sku)
                                     <br><small>{{ trans('items.sku') }}: {{ $item->sku }}</small>
-                                @endif
+                                @endif -->
                             </td>
                             <td class="text-center">{{ $item->quantity }}</td>
                             <td class="text-right">@money($item->price, $invoice->currency_code, true)</td>
@@ -113,10 +107,12 @@
                     <table class="table">
                         <tbody>
                         @foreach($invoice->totals as $total)
-                        <tr>
-                            <th>{{ trans($total['name']) }}:</th>
-                            <td class="text-right">@money($total->amount, $invoice->currency_code, true)</td>
-                        </tr>
+                            @if($total['name'] == 'invoices.total')
+                                <tr>
+                                    <th>{{ trans($total['name']) }}:</th>
+                                    <td class="text-right">@money($total->amount, $invoice->currency_code, true)</td>
+                                </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
