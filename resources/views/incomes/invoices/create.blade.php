@@ -88,9 +88,9 @@
                 </table>
             </div>
         </div>
-        {{ Form::textareaGroup('notes', trans_choice('general.notes', 2)) }}
+        <!-- {{ Form::textareaGroup('notes', trans_choice('general.notes', 2)) }}
 
-        {{ Form::fileGroup('attachment', trans('general.attachment')) }}
+        {{ Form::fileGroup('attachment', trans('general.attachment')) }} -->
     </div>
     <!-- /.box-body -->
 
