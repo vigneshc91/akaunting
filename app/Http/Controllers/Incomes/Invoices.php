@@ -33,6 +33,7 @@ use Date;
 use File;
 use Image;
 use Storage;
+use DB;
 
 class Invoices extends Controller
 {
@@ -97,7 +98,7 @@ class Invoices extends Controller
      */
     public function create()
     {
-        $customers = Customer::enabled()->pluck('name', 'id');
+        $customers = Customer::enabled()->select(DB::raw("CONCAT(name, ' ', IFNULL(phone, '')) as name"), 'id')->pluck('name', 'id');
 
         $currencies = Currency::enabled()->pluck('name', 'code');
 
@@ -315,7 +316,7 @@ class Invoices extends Controller
      */
     public function edit(Invoice $invoice)
     {
-        $customers = Customer::enabled()->pluck('name', 'id');
+        $customers = Customer::enabled()->select(DB::raw("CONCAT(name, ' ', IFNULL(phone, '')) as name"), 'id')->pluck('name', 'id');
 
         $currencies = Currency::enabled()->pluck('name', 'code');
 
