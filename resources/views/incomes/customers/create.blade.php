@@ -21,12 +21,12 @@
             {{ Form::textGroup('website', trans('general.website'), 'globe', []) }}
 
             {{ Form::textareaGroup('address', trans('general.address')) }}
+            
+            {{ Form::hidden('enabled', '1') }}
 
-            {{ Form::radioGroup('enabled', trans('general.enabled')) }}
-
-            <div  id="customer-create-user" class="form-group col-md-12 margin-top">
+            <!-- <div  id="customer-create-user" class="form-group col-md-12 margin-top">
                 <strong>{{ trans('customers.allow_login') }}</strong> &nbsp;  {{ Form::checkbox('create_user', '1', null, ['id' => 'create_user']) }}
-            </div>
+            </div> -->
         </div>
         <!-- /.box-body -->
 

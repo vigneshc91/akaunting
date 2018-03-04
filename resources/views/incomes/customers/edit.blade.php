@@ -26,15 +26,15 @@
 
         {{ Form::textareaGroup('address', trans('general.address')) }}
 
-        {{ Form::radioGroup('enabled', trans('general.enabled')) }}
+        {{ Form::hidden('enabled', '1') }}
 
-        <div  id="customer-create-user" class="form-group col-md-12 margin-top">
+        <!-- <div  id="customer-create-user" class="form-group col-md-12 margin-top">
             @if ($customer->user_id)
                 <strong>{{ trans('customers.user_created') }}</strong> &nbsp; {{ Form::checkbox('create_user', '1', 1, ['id' => 'create_user', 'disabled' => 'disabled']) }}
             @else
                 <strong>{{ trans('customers.allow_login') }}</strong> &nbsp; {{ Form::checkbox('create_user', '1', null, ['id' => 'create_user']) }}
             @endif
-        </div>
+        </div> -->
     </div>
     <!-- /.box-body -->
 

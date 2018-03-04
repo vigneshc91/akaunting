@@ -66,10 +66,10 @@
                                     <th>{{ trans('invoices.invoice_date') }}:</th>
                                     <td class="text-right">{{ Date::parse($invoice->invoiced_at)->format($date_format) }}</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <th>{{ trans('invoices.payment_due') }}:</th>
                                     <td class="text-right">{{ Date::parse($invoice->due_at)->format($date_format) }}</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -90,9 +90,9 @@
                             <tr>
                                 <td>
                                     {{ $item->name }}
-                                    @if ($item->sku)
+                                    <!-- @if ($item->sku)
                                         <br><small>{{ trans('items.sku') }}: {{ $item->sku }}</small>
-                                    @endif
+                                    @endif -->
                                 </td>
                                 <td class="text-center">{{ $item->quantity }}</td>
                                 <td class="text-right">@money($item->price, $invoice->currency_code, true)</td>

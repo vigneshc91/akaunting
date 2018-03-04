@@ -14,11 +14,11 @@
 
             {{ Form::textGroup('invoiced_at', trans('invoices.invoice_date'), 'calendar', ['id' => 'invoiced_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy-mm-dd\'', 'data-mask' => ''], Date::parse($invoice->invoiced_at)->toDateString()) }}
 
-            {{ Form::textGroup('due_at', trans('invoices.due_date'), 'calendar', ['id' => 'due_at', 'class' => 'form-control', 'required' => 'required', 'data-inputmask' => '\'alias\': \'yyyy-mm-dd\'', 'data-mask' => ''], Date::parse($invoice->due_at)->toDateString()) }}
+            {{ Form::hidden('due_at', Date::parse($invoice->due_at)->toDateString()) }}
 
             {{ Form::textGroup('invoice_number', trans('invoices.invoice_number'), 'file-text-o') }}
 
-            {{ Form::textGroup('order_number', trans('invoices.order_number'), 'shopping-cart',[]) }}
+            <!-- {{ Form::textGroup('order_number', trans('invoices.order_number'), 'shopping-cart',[]) }} -->
             <div class="form-group col-md-12">
                 {!! Form::label('items', 'Items', ['class' => 'control-label']) !!}
                 <div class="table-responsive">
