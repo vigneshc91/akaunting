@@ -10,6 +10,9 @@
                 <img src="{{ $logo }}" class="invoice-logo" />
                 @endif
             </div> -->
+            <div class="col-xs-12">
+                <p class="text-center">Sri Ramajayam</p>
+            </div>
             <div class="col-xs-12 invoice-company">
                 <address>
                     <strong>{{ setting('general.company_name') }}</strong><br>
@@ -118,6 +121,9 @@
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="col-xs-12">
+            <p class="text-center">Thank You!</p>
         </div>
     </section>
 @endsection
