@@ -1,5 +1,5 @@
 {
-    "name": "akaunting/akaunting",
+    "name": "billing/billing",
     "description": "Free accounting software, based on Laravel framework.",
     "homepage": "https://akaunting.com",
     "keywords": ["laravel", "accounting", "software", "online"],
@@ -33,9 +33,7 @@
         "plank/laravel-mediable": "2.5.*",
         "santigarcor/laratrust": "4.0.*",
         "sofa/eloquence": "5.4.*",
-        "tucker-eric/eloquentfilter": "1.1.*"
-    },
-    "require-dev": {
+        "tucker-eric/eloquentfilter": "1.1.*",
         "fzaninotto/faker": "1.6.*"
     },
     "autoload": {
